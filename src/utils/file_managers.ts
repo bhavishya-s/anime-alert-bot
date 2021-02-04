@@ -1,4 +1,4 @@
-import { Media } from "./interfaces";
+import { Media } from "../interfaces";
 import fs from "fs";
 
 export const readStoredAnimeList = (): Media => {

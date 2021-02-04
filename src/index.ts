@@ -16,4 +16,5 @@ if (!process.env.TOKEN)
   throw new Error(
     "Bot token not found in the environment. Please verify your settings."
   );
+
 client.login(process.env.TOKEN!);

@@ -1,5 +1,5 @@
 import axios from "axios";
-import { Media } from "./interfaces";
+import { Media } from "../interfaces";
 
 export const getData = async (id: number): Promise<Media> => {
   const response = await axios.post("https://graphql.anilist.co/", {
