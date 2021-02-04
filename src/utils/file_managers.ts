@@ -1,7 +1,7 @@
 import { Media } from "../interfaces";
 import fs from "fs";
 
-export const readStoredAnimeList = (): Media => {
+export const readStoredAnimeList = (): any => {
   if (!fs.existsSync(`./${process.env.FILE_NAME}.json`))
     fs.writeFileSync(`./${process.env.FILE_NAME}.json`, "{}", "utf8");
 
@@ -25,7 +25,8 @@ export const writeToAnimeList = (anime: Media): boolean | Media => {
     );
   } catch (err) {
     console.log(
-      "An error occured while trying to write to the anime list file."
+      err
+      // "An error occured while trying to write to the anime list file."
     );
   }
   return true;

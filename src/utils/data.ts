@@ -6,18 +6,24 @@ export const getData = async (id: number): Promise<Media> => {
     query: `
     {
       Media(id: ${id}, type:ANIME, status:RELEASING){
-          id
-          title{
-              english
-          }
-          nextAiringEpisode{
-              airingAt
-              timeUntilAiring
-              episode
-          }
-  
+        id
+        title{
+          english
+          romaji
+          native
+        }
+        coverImage{
+          medium
+        }
+        description
+        nextAiringEpisode {
+          airingAt
+          timeUntilAiring
+          episode
+        }
       }
-  }
+    
+}
     `,
   });
   return response.data.data.Media;
